@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Button } from './Button';
+import { Button } from './CustomButton';
 import { ExternalLink } from 'lucide-react';
 
 interface ProjectCardProps {

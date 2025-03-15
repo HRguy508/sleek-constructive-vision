@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
-import { Button } from '../ui/Button';
+import { Button } from '../ui/CustomButton';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {

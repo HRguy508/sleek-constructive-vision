@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/CustomButton';
 import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {

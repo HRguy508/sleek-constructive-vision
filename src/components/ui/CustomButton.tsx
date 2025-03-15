@@ -2,7 +2,7 @@
 import React from 'react';
 import { cn } from "@/lib/utils";
 import { type VariantProps } from "class-variance-authority";
-import { Button as ShadcnButton, type ButtonProps as ShadcnButtonProps } from "@/components/ui/button";
+import { Button as ShadcnButton, buttonVariants } from "@/components/ui/button";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive' | 'accent';
@@ -26,7 +26,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           },
           className
         )}
-        variant={isAccentVariant ? 'default' : variant as ShadcnButtonProps["variant"]}
+        variant={isAccentVariant ? 'default' : variant as Exclude<typeof variant, 'accent'>}
         size={size}
         ref={ref}
         {...props}

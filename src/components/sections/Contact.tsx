@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/CustomButton';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';

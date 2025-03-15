@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/CustomButton';
 import ProjectCard from '../ui/ProjectCard';
 
 const Projects = () => {

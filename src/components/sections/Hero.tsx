@@ -16,8 +16,8 @@ const Hero = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/197f9ea1-925d-4cd3-be09-2db65a4c04ec.png" 
-          alt="Modern architectural building" 
+          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+          alt="Modern architectural engineering" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40"></div>

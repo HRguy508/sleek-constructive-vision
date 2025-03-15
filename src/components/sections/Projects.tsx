@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button } from '../ui/CustomButton';
@@ -14,37 +15,37 @@ const Projects = () => {
       title: "Sustainable School Campus",
       category: "Education",
       description: "A modern school facility built with sustainable materials and passive cooling systems to serve 500 students.",
-      image: "https://images.unsplash.com/photo-1503507420689-7b961cc77da5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Community Health Center",
       category: "Healthcare",
       description: "A central healthcare facility designed to provide medical services to underserved rural communities.",
-      image: "https://images.unsplash.com/photo-1613896640137-bb5b31496315?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Eco-Friendly Church",
       category: "Religious",
       description: "A spiritual gathering space that harmonizes with the natural environment through sustainable design principles.",
-      image: "https://images.unsplash.com/photo-1617762601224-85a073450e6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Community Center Renovation",
       category: "Community",
       description: "Revitalization of an existing space to create a multifunctional community hub with modern amenities.",
-      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Urban Housing Development",
       category: "Residential",
       description: "Affordable housing solution with energy-efficient features and community-focused shared spaces.",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Disaster Relief Structures",
       category: "Humanitarian",
       description: "Rapidly deployable, durable structures designed to provide immediate shelter following natural disasters.",
-      image: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
   ];
 

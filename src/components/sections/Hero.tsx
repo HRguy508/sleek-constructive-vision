@@ -36,10 +36,10 @@ const Hero = () => {
             We create sustainable, humanitarian-focused structures that blend cutting-edge engineering with thoughtful design.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 opacity-0 animate-fade-in-delay-3">
-            <Button variant="accent" size="xl" animate className="w-full sm:w-auto">
+            <Button variant="accent" size="lg" animate className="w-full sm:w-auto">
               Explore Our Work
             </Button>
-            <Button variant="outline" size="xl" className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto">
+            <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 w-full sm:w-auto">
               Learn More
             </Button>
           </div>

@@ -1,11 +1,12 @@
 
 import React from 'react';
-import { Button as ShadcnButton } from "@/components/ui/button";
+import { Button as ShadcnButton, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { type VariantProps } from "class-variance-authority";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'primary' | 'accent';
-  size?: 'default' | 'sm' | 'lg' | 'icon' | 'xl';
+  variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive' | 'accent';
+  size?: 'default' | 'sm' | 'lg' | 'icon';
   children: React.ReactNode;
   className?: string;
   asChild?: boolean;
@@ -14,17 +15,18 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'default', animate = false, children, ...props }, ref) => {
+    const isAccentVariant = variant === 'accent';
+    
     return (
       <ShadcnButton
         className={cn(
           {
             'transition-all duration-300 hover:scale-105': animate,
-            'bg-accent text-accent-foreground hover:bg-accent/90': variant === 'accent',
-            'text-lg py-6 px-8': size === 'xl',
+            'bg-accent text-accent-foreground hover:bg-accent/90': isAccentVariant,
           },
           className
         )}
-        variant={variant === 'accent' ? 'default' : variant}
+        variant={isAccentVariant ? 'default' : variant}
         size={size}
         ref={ref}
         {...props}

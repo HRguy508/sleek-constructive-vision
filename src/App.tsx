@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { AuroraBackgroundDemo } from "./components/ui/aurora-background-demo";
 
 // Create a basic page component for route demonstration
 const PlaceholderPage = ({ title }: { title: string }) => (
@@ -78,6 +79,9 @@ const App = () => (
           {/* Contact Routes */}
           <Route path="/contact/quote" element={<Quote />} />
           <Route path="/contact/office" element={<Office />} />
+          
+          {/* Aurora Demo Route */}
+          <Route path="/aurora-demo" element={<AuroraBackgroundDemo />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

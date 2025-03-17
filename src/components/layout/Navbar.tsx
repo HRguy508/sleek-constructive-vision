@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Button } from '../ui/CustomButton';
 import { Menu, X } from 'lucide-react';
@@ -8,9 +8,30 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/#' + sectionId);
+    }
+  };
+
+  const handleContactClick = () => {
+    setIsMobileMenuOpen(false);
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/#contact');
+    }
   };
 
   useEffect(() => {
@@ -47,12 +68,12 @@ const Navbar = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/#about" className="text-primary hover:text-accent transition-colors">About</Link>
-            <Link to="/#services" className="text-primary hover:text-accent transition-colors">Services</Link>
-            <Link to="/#projects" className="text-primary hover:text-accent transition-colors">Projects</Link>
-            <Link to="/#team" className="text-primary hover:text-accent transition-colors">Team</Link>
-            <Link to="/#contact" className="text-primary hover:text-accent transition-colors">Contact</Link>
-            <Button variant="accent" animate>Get in Touch</Button>
+            <button onClick={() => handleNavClick('about')} className="text-primary hover:text-accent transition-colors">About</button>
+            <button onClick={() => handleNavClick('services')} className="text-primary hover:text-accent transition-colors">Services</button>
+            <button onClick={() => handleNavClick('projects')} className="text-primary hover:text-accent transition-colors">Projects</button>
+            <button onClick={() => handleNavClick('team')} className="text-primary hover:text-accent transition-colors">Team</button>
+            <button onClick={() => handleNavClick('contact')} className="text-primary hover:text-accent transition-colors">Contact</button>
+            <Button onClick={handleContactClick} variant="accent" animate>Get in Touch</Button>
           </nav>
           
           <div className="md:hidden">
@@ -71,42 +92,37 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 glassmorphism shadow-lg py-4 animate-zoom-in">
           <nav className="flex flex-col space-y-4 px-6">
-            <Link 
-              to="/#about" 
-              className="text-primary hover:text-accent transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <button 
+              onClick={() => handleNavClick('about')} 
+              className="text-primary hover:text-accent transition-colors py-2 text-left"
             >
               About
-            </Link>
-            <Link 
-              to="/#services" 
-              className="text-primary hover:text-accent transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+            </button>
+            <button 
+              onClick={() => handleNavClick('services')} 
+              className="text-primary hover:text-accent transition-colors py-2 text-left"
             >
               Services
-            </Link>
-            <Link 
-              to="/#projects" 
-              className="text-primary hover:text-accent transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+            </button>
+            <button 
+              onClick={() => handleNavClick('projects')} 
+              className="text-primary hover:text-accent transition-colors py-2 text-left"
             >
               Projects
-            </Link>
-            <Link 
-              to="/#team" 
-              className="text-primary hover:text-accent transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+            </button>
+            <button 
+              onClick={() => handleNavClick('team')} 
+              className="text-primary hover:text-accent transition-colors py-2 text-left"
             >
               Team
-            </Link>
-            <Link 
-              to="/#contact" 
-              className="text-primary hover:text-accent transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+            </button>
+            <button 
+              onClick={() => handleNavClick('contact')} 
+              className="text-primary hover:text-accent transition-colors py-2 text-left"
             >
               Contact
-            </Link>
-            <Button variant="accent" className="w-full">Get in Touch</Button>
+            </button>
+            <Button onClick={handleContactClick} variant="accent" className="w-full">Get in Touch</Button>
           </nav>
         </div>
       )}

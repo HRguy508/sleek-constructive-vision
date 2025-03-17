@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 const transition = {
   type: "spring",
@@ -87,8 +87,15 @@ export const ProductItem = ({
   href: string;
   src: string;
 }) => {
+  const navigate = useNavigate();
+  
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(href);
+  };
+  
   return (
-    <RouterLink to={href} className="flex space-x-2">
+    <a href={href} onClick={handleClick} className="flex space-x-2">
       <img
         src={src}
         width={140}
@@ -104,17 +111,26 @@ export const ProductItem = ({
           {description}
         </p>
       </div>
-    </RouterLink>
+    </a>
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, to, ...rest }: any) => {
+  const navigate = useNavigate();
+  
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(to);
+  };
+  
   return (
-    <RouterLink
+    <a
+      href={to}
+      onClick={handleClick}
       {...rest}
       className="text-muted-foreground dark:text-neutral-200 hover:text-primary transition-colors"
     >
       {children}
-    </RouterLink>
+    </a>
   );
 };

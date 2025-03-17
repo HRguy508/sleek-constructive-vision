@@ -33,25 +33,25 @@ function Navbar({ className }: { className?: string }) {
           <div className="text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="School Construction"
-              to="/projects/schools"
+              href="/projects/schools"
               src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
               description="Building modern educational facilities in Uganda."
             />
             <ProductItem
               title="Hospital Development"
-              to="/projects/hospitals"
+              href="/projects/hospitals"
               src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
               description="Creating healthcare infrastructure for local communities."
             />
             <ProductItem
               title="Community Centers"
-              to="/projects/community"
+              href="/projects/community"
               src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
               description="Developing spaces for community engagement and activities."
             />
             <ProductItem
               title="Infrastructure"
-              to="/projects/infrastructure"
+              href="/projects/infrastructure"
               src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
               description="Building critical infrastructure for growing communities."
             />

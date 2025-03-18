@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -176,6 +177,31 @@
   
   .clip-diagonal-reverse {
     clip-path: polygon(0 0, 100% 0, 0 100%, 0 0);
+  }
+  
+  /* Pinterest embed styling to hide branding */
+  .pinterest-embed-container iframe {
+    pointer-events: none; /* Prevent clicking on Pinterest buttons */
+  }
+  
+  /* Hide Pinterest logo and attribution */
+  .pinterest-embed-container::before,
+  .pinterest-embed-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40px; 
+    background-color: white;
+    z-index: 10;
+  }
+  
+  .pinterest-embed-container::before {
+    top: 0;
+  }
+  
+  .pinterest-embed-container::after {
+    bottom: 0;
   }
 }
 

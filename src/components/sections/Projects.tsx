@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button } from '../ui/CustomButton';
@@ -52,10 +51,8 @@ const Projects = () => {
     },
   ];
 
-  // All unique categories for filtering
   const categories = ['All', ...new Set(projects.map(project => project.category))];
   
-  // Pinterest embeds
   const pinterestProjects = [
     {
       id: "11047961581432686",
@@ -101,7 +98,6 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* View mode switcher */}
         <div className="flex justify-center mb-10">
           <div className="bg-gray-100 rounded-lg p-1 inline-flex">
             <button 
@@ -119,7 +115,6 @@ const Projects = () => {
           </div>
         </div>
         
-        {/* Project display area */}
         <div className={`${inView ? 'animate-fade-in-delay-2' : 'opacity-0'} transition-all duration-500`}>
           {displayMode === 'carousel' ? (
             <div className="max-w-6xl mx-auto mb-12">
@@ -147,23 +142,26 @@ const Projects = () => {
           </Button>
         </div>
         
-        {/* Pinterest Embeds Section */}
         <div className="mt-20">
           <h3 className={`text-2xl font-bold text-center mb-8 ${inView ? 'animate-fade-in-delay-2' : 'opacity-0'}`}>
-            Featured Pinterest Projects
+            Featured Projects Gallery
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pinterestProjects.map((project, index) => (
               <div key={index} className={`w-full shadow-xl rounded-lg overflow-hidden ${inView ? 'animate-fade-in-delay-3' : 'opacity-0'}`} style={{ animationDelay: `${index * 200}ms` }}>
-                <iframe 
-                  src={`https://assets.pinterest.com/ext/embed.html?id=${project.id}`} 
-                  height={project.id === "15621929951505120" ? "900" : project.id === "70437489118755" ? "1167" : "600"} 
-                  width="100%" 
-                  frameBorder="0" 
-                  scrolling="no"
-                  title={`Pinterest Embed - ${project.title}`}
-                  className="shadow-lg rounded-lg"
-                ></iframe>
+                <div className="relative pinterest-embed-container">
+                  <iframe 
+                    src={`https://assets.pinterest.com/ext/embed.html?id=${project.id}`} 
+                    height={project.id === "15621929951505120" ? "900" : project.id === "70437489118755" ? "1167" : "600"} 
+                    width="100%" 
+                    frameBorder="0" 
+                    scrolling="no"
+                    title={`Project - ${project.title}`}
+                    className="shadow-lg rounded-lg pinterest-embed"
+                  ></iframe>
+                  <div className="absolute top-0 left-0 right-0 h-10 bg-white z-10"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10"></div>
+                </div>
                 <div className="bg-white p-4">
                   <h4 className="text-lg font-bold">{project.title}</h4>
                   <span className="text-sm text-gray-500">{project.category}</span>
@@ -173,25 +171,39 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Original Featured Construction Project */}
         <div className="mt-20 max-w-4xl mx-auto">
           <h3 className={`text-2xl font-bold text-center mb-8 ${inView ? 'animate-fade-in-delay-2' : 'opacity-0'}`}>
             Featured Construction Project
           </h3>
           <div className={`w-full flex justify-center ${inView ? 'animate-fade-in-delay-3' : 'opacity-0'}`}>
-            <iframe 
-              src="https://assets.pinterest.com/ext/embed.html?id=3025924745349513" 
-              height="600" 
-              width="100%" 
-              style={{ maxWidth: '800px' }}
-              frameBorder="0" 
-              scrolling="no"
-              title="Pinterest Embed - Construction Project"
-              className="shadow-2xl rounded-lg"
-            ></iframe>
+            <div className="relative pinterest-embed-container" style={{ maxWidth: '800px', width: '100%' }}>
+              <iframe 
+                src="https://assets.pinterest.com/ext/embed.html?id=3025924745349513" 
+                height="600" 
+                width="100%"
+                frameBorder="0" 
+                scrolling="no"
+                title="Pinterest Embed - Construction Project"
+                className="shadow-2xl rounded-lg pinterest-embed"
+              ></iframe>
+              <div className="absolute top-0 left-0 right-0 h-10 bg-white z-10"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10"></div>
+            </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .pinterest-embed-container {
+          position: relative;
+          overflow: hidden;
+        }
+        .pinterest-embed {
+          margin-top: -40px;
+          margin-bottom: -40px;
+          pointer-events: none;
+        }
+      `}</style>
     </section>
   );
 };

@@ -71,6 +71,21 @@ const Projects = () => {
       id: "507217976800078855",
       title: "Urban Green Space",
       category: "Urban Planning"
+    },
+    {
+      id: "281543725178757",
+      title: "Modern Steel Structure",
+      category: "Industrial"
+    },
+    {
+      id: "15621929951505120",
+      title: "Sustainable Housing Project",
+      category: "Residential"
+    },
+    {
+      id: "70437489118755",
+      title: "Project Video Showcase",
+      category: "Video Gallery"
     }
   ];
 
@@ -137,12 +152,12 @@ const Projects = () => {
           <h3 className={`text-2xl font-bold text-center mb-8 ${inView ? 'animate-fade-in-delay-2' : 'opacity-0'}`}>
             Featured Pinterest Projects
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pinterestProjects.map((project, index) => (
               <div key={index} className={`w-full shadow-xl rounded-lg overflow-hidden ${inView ? 'animate-fade-in-delay-3' : 'opacity-0'}`} style={{ animationDelay: `${index * 200}ms` }}>
                 <iframe 
                   src={`https://assets.pinterest.com/ext/embed.html?id=${project.id}`} 
-                  height="600" 
+                  height={project.id === "15621929951505120" ? "900" : project.id === "70437489118755" ? "1167" : "600"} 
                   width="100%" 
                   frameBorder="0" 
                   scrolling="no"

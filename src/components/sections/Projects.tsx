@@ -54,6 +54,25 @@ const Projects = () => {
 
   // All unique categories for filtering
   const categories = ['All', ...new Set(projects.map(project => project.category))];
+  
+  // Pinterest embeds
+  const pinterestProjects = [
+    {
+      id: "11047961581432686",
+      title: "Contemporary Office Building",
+      category: "Commercial"
+    },
+    {
+      id: "570760952795095889",
+      title: "Luxury Residential Tower",
+      category: "Residential"
+    },
+    {
+      id: "507217976800078855",
+      title: "Urban Green Space",
+      category: "Urban Planning"
+    }
+  ];
 
   return (
     <section id="projects" className="section-padding bg-white">
@@ -113,6 +132,33 @@ const Projects = () => {
           </Button>
         </div>
         
+        {/* Pinterest Embeds Section */}
+        <div className="mt-20">
+          <h3 className={`text-2xl font-bold text-center mb-8 ${inView ? 'animate-fade-in-delay-2' : 'opacity-0'}`}>
+            Featured Pinterest Projects
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {pinterestProjects.map((project, index) => (
+              <div key={index} className={`w-full shadow-xl rounded-lg overflow-hidden ${inView ? 'animate-fade-in-delay-3' : 'opacity-0'}`} style={{ animationDelay: `${index * 200}ms` }}>
+                <iframe 
+                  src={`https://assets.pinterest.com/ext/embed.html?id=${project.id}`} 
+                  height="600" 
+                  width="100%" 
+                  frameBorder="0" 
+                  scrolling="no"
+                  title={`Pinterest Embed - ${project.title}`}
+                  className="shadow-lg rounded-lg"
+                ></iframe>
+                <div className="bg-white p-4">
+                  <h4 className="text-lg font-bold">{project.title}</h4>
+                  <span className="text-sm text-gray-500">{project.category}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Original Featured Construction Project */}
         <div className="mt-20 max-w-4xl mx-auto">
           <h3 className={`text-2xl font-bold text-center mb-8 ${inView ? 'animate-fade-in-delay-2' : 'opacity-0'}`}>
             Featured Construction Project

@@ -8,6 +8,42 @@ import NotFound from "./pages/NotFound";
 import { AuroraBackgroundDemo } from "./components/ui/aurora-background-demo";
 import { HeroSectionDemo } from "./components/blocks/hero-section-demo";
 
+const ThreeDPhotoCarouselDemo = () => {
+  const demoProjects = [
+    {
+      title: "Urban Development Complex",
+      category: "Construction",
+      description: "A multi-building urban development project with modern architecture and sustainable design principles.",
+      image: "/lovable-uploads/2555fd9c-36c6-4a95-8f92-35f4f409f155.png"
+    },
+    {
+      title: "Community Health Center",
+      category: "Healthcare",
+      description: "A central healthcare facility designed to provide medical services to underserved rural communities.",
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Eco-Friendly Church",
+      category: "Religious",
+      description: "A spiritual gathering space that harmonizes with the natural environment through sustainable design principles.",
+      image: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+  ];
+  
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-100">
+      <h1 className="text-3xl font-bold mb-8">3D Project Carousel Demo</h1>
+      <div className="w-full max-w-4xl bg-white p-6 rounded-xl shadow-lg">
+        <div className="import { ThreeDPhotoCarousel } from '../ui/3d-carousel';min-h-[500px] flex flex-col justify-center space-y-4">
+          <div className="p-2">
+            <ThreeDPhotoCarousel projects={demoProjects} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const PlaceholderPage = ({ title }: { title: string }) => (
   <div className="min-h-screen flex flex-col items-center justify-center">
     <h1 className="text-4xl font-bold mb-4">{title}</h1>
@@ -71,6 +107,7 @@ const App = () => (
           
           <Route path="/aurora-demo" element={<AuroraBackgroundDemo />} />
           <Route path="/hero-demo" element={<HeroSectionDemo />} />
+          <Route path="/carousel-demo" element={<ThreeDPhotoCarouselDemo />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

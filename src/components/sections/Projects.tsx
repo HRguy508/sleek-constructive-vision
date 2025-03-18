@@ -1,14 +1,17 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button } from '../ui/CustomButton';
 import ProjectCard from '../ui/ProjectCard';
+import { ThreeDPhotoCarousel } from '../ui/3d-carousel';
 
 const Projects = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [displayMode, setDisplayMode] = useState<'grid' | 'carousel'>('carousel');
 
   const projects = [
     {
@@ -49,6 +52,9 @@ const Projects = () => {
     },
   ];
 
+  // All unique categories for filtering
+  const categories = ['All', ...new Set(projects.map(project => project.category))];
+
   return (
     <section id="projects" className="section-padding bg-white">
       <div className="container mx-auto px-4 md:px-6" ref={ref}>
@@ -60,18 +66,45 @@ const Projects = () => {
             Discover our portfolio of humanitarian and sustainable engineering projects making a positive impact worldwide.
           </p>
         </div>
+
+        {/* View mode switcher */}
+        <div className="flex justify-center mb-10">
+          <div className="bg-gray-100 rounded-lg p-1 inline-flex">
+            <button 
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${displayMode === 'carousel' ? 'bg-white shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+              onClick={() => setDisplayMode('carousel')}
+            >
+              3D Carousel
+            </button>
+            <button 
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${displayMode === 'grid' ? 'bg-white shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+              onClick={() => setDisplayMode('grid')}
+            >
+              Grid View
+            </button>
+          </div>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              category={project.category}
-              description={project.description}
-              image={project.image}
-              delay={inView ? index * 100 : 0}
-            />
-          ))}
+        {/* Project display area */}
+        <div className={`${inView ? 'animate-fade-in-delay-2' : 'opacity-0'} transition-all duration-500`}>
+          {displayMode === 'carousel' ? (
+            <div className="max-w-6xl mx-auto mb-12">
+              <ThreeDPhotoCarousel projects={projects} />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  category={project.category}
+                  description={project.description}
+                  image={project.image}
+                  delay={inView ? index * 100 : 0}
+                />
+              ))}
+            </div>
+          )}
         </div>
         
         <div className="text-center mt-12 mb-12">

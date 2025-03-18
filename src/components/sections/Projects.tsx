@@ -12,10 +12,10 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Sustainable School Campus",
-      category: "Education",
-      description: "A modern school facility built with sustainable materials and passive cooling systems to serve 500 students.",
-      image: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      title: "Urban Development Complex",
+      category: "Construction",
+      description: "A multi-building urban development project with modern architecture and sustainable design principles.",
+      image: "/lovable-uploads/2555fd9c-36c6-4a95-8f92-35f4f409f155.png"
     },
     {
       title: "Community Health Center",
@@ -74,10 +74,28 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 mb-12">
           <Button variant="accent" size="lg" animate>
             View All Projects
           </Button>
+        </div>
+        
+        <div className="mt-20 max-w-4xl mx-auto">
+          <h3 className={`text-2xl font-bold text-center mb-8 ${inView ? 'animate-fade-in-delay-2' : 'opacity-0'}`}>
+            Featured Construction Project
+          </h3>
+          <div className={`w-full flex justify-center ${inView ? 'animate-fade-in-delay-3' : 'opacity-0'}`}>
+            <iframe 
+              src="https://assets.pinterest.com/ext/embed.html?id=3025924745349513" 
+              height="600" 
+              width="100%" 
+              style={{ maxWidth: '800px' }}
+              frameBorder="0" 
+              scrolling="no"
+              title="Pinterest Embed - Construction Project"
+              className="shadow-2xl rounded-lg"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>

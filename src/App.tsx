@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { AuroraBackgroundDemo } from "./components/ui/aurora-background-demo";
 import { HeroSectionDemo } from "./components/blocks/hero-section-demo";
+import { ThreeDPhotoCarousel } from "./components/ui/3d-carousel";
 
 const ThreeDPhotoCarouselDemo = () => {
   const demoProjects = [
@@ -34,7 +36,7 @@ const ThreeDPhotoCarouselDemo = () => {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-100">
       <h1 className="text-3xl font-bold mb-8">3D Project Carousel Demo</h1>
       <div className="w-full max-w-4xl bg-white p-6 rounded-xl shadow-lg">
-        <div className="import { ThreeDPhotoCarousel } from '../ui/3d-carousel';min-h-[500px] flex flex-col justify-center space-y-4">
+        <div className="min-h-[500px] flex flex-col justify-center space-y-4">
           <div className="p-2">
             <ThreeDPhotoCarousel projects={demoProjects} />
           </div>

@@ -13,13 +13,19 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Background iframe with overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e"
-          alt="Engineering and construction" 
-          className="w-full h-full object-cover filter blur-[2px]"
-        />
+        <div className="w-full h-full pinterest-embed-container">
+          <iframe 
+            src="https://assets.pinterest.com/ext/embed.html?id=321163017184911198" 
+            height="100%" 
+            width="100%" 
+            frameBorder="0" 
+            scrolling="no"
+            className="w-full h-full object-cover pinterest-embed"
+            title="Hero Background"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
@@ -57,6 +63,21 @@ const Hero = () => {
           <ChevronDown className="text-white" size={24} />
         </button>
       </div>
+
+      {/* Style to hide Pinterest branding */}
+      <style>
+        {`
+          .pinterest-embed-container {
+            position: relative;
+            overflow: hidden;
+          }
+          .pinterest-embed {
+            margin-top: -40px;
+            margin-bottom: -40px;
+            pointer-events: none;
+          }
+        `}
+      </style>
     </section>
   );
 };

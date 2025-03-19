@@ -12,6 +12,16 @@ const Services = () => {
 
   return (
     <section id="services" className="section-padding bg-secondary/30">
+      {/* Background image above Services section */}
+      <div className="w-full h-[300px] relative mb-12">
+        <img 
+          src="https://wallpapers.com/images/hd/two-construction-workers-helping-each-other-b79ms9jjv0e60s5h.jpg"
+          alt="Two construction workers helping each other" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
+      
       <div className="container mx-auto px-4 md:px-6" ref={ref}>
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className={`section-title mx-auto after:left-1/2 after:-translate-x-1/2 ${inView ? 'animate-fade-in' : 'opacity-0'}`}>

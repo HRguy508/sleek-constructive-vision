@@ -48,13 +48,7 @@ const About = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-64 h-64 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1626885930974-c58da27dc694?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                alt="Architectural blueprint review" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {/* Removed the absolute positioned image that was here */}
           </div>
         </div>
       </div>

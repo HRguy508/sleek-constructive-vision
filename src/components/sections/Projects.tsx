@@ -193,17 +193,19 @@ const Projects = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        .pinterest-embed-container {
-          position: relative;
-          overflow: hidden;
-        }
-        .pinterest-embed {
-          margin-top: -40px;
-          margin-bottom: -40px;
-          pointer-events: none;
-        }
-      `}</style>
+      <style>
+        {`
+          .pinterest-embed-container {
+            position: relative;
+            overflow: hidden;
+          }
+          .pinterest-embed {
+            margin-top: -40px;
+            margin-bottom: -40px;
+            pointer-events: none;
+          }
+        `}
+      </style>
     </section>
   );
 };

@@ -73,16 +73,6 @@ const Projects = () => {
       id: "281543725178757",
       title: "Modern Steel Structure",
       category: "Industrial"
-    },
-    {
-      id: "15621929951505120",
-      title: "Sustainable Housing Project",
-      category: "Residential"
-    },
-    {
-      id: "70437489118755",
-      title: "Project Video Showcase",
-      category: "Video Gallery"
     }
   ];
 

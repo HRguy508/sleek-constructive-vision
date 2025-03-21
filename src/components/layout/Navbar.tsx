@@ -64,9 +64,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-heading font-bold tracking-tight text-primary">
-              Nexus<span className="text-accent">Building</span>
-            </span>
+            <img 
+              src="/lovable-uploads/b301f1b1-bd0c-4a67-b7b4-0ffcb1c84394.png" 
+              alt="Nexus Building Company" 
+              className="h-12 md:h-14"
+            />
           </Link>
           
           <nav className="hidden md:flex items-center">

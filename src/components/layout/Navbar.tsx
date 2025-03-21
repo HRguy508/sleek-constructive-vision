@@ -65,7 +65,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center -ml-4">
             <img 
-              src="/lovable-uploads/cbdc7635-86da-4ebb-9f78-0927f9ab3e0e.png" 
+              src="/lovable-uploads/1540fe3c-604c-4f6d-9513-6fb9456483a9.png" 
               alt="Nexus Building Company" 
               className="h-full max-h-16 md:max-h-20 w-auto object-contain"
             />

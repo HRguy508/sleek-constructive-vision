@@ -67,7 +67,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/b301f1b1-bd0c-4a67-b7b4-0ffcb1c84394.png" 
               alt="Nexus Building Company" 
-              className="h-12 md:h-14"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </Link>
           

@@ -63,11 +63,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center -ml-4">
             <img 
-              src="/lovable-uploads/b301f1b1-bd0c-4a67-b7b4-0ffcb1c84394.png" 
+              src="/lovable-uploads/cbdc7635-86da-4ebb-9f78-0927f9ab3e0e.png" 
               alt="Nexus Building Company" 
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-full max-h-16 md:max-h-20 w-auto object-contain"
             />
           </Link>
           

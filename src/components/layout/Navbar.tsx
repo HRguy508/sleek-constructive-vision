@@ -54,10 +54,10 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2',
         {
           'bg-transparent': !isScrolled && !isMobileMenuOpen,
-          'glassmorphism py-3 shadow-md': isScrolled || isMobileMenuOpen
+          'bg-white/50 backdrop-blur-md shadow-sm': isScrolled || isMobileMenuOpen
         }
       )}
     >
@@ -67,7 +67,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/5384bdb9-92a3-4fc0-83c6-228eb1f6a66b.png" 
               alt="Nexus Building Company" 
-              className="h-full max-h-16 md:max-h-20 w-auto object-contain"
+              className="h-full max-h-14 md:max-h-16 w-auto object-contain"
             />
           </Link>
           

@@ -25,21 +25,21 @@ const TeamCard: React.FC<TeamCardProps> = ({
 }) => {
   return (
     <div 
-      className="group rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-lg transition-all duration-300"
+      className="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300"
       style={{ 
         animationDelay: `${delay}ms`,
         opacity: 0,
         animation: `fade-in 0.6s ease-out ${delay}ms forwards`
       }}
     >
-      <div className="aspect-[4/5] relative overflow-hidden">
+      <div className="aspect-[4/5] relative overflow-hidden rounded-t-xl">
         <img 
           src={image} 
           alt={name} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute bottom-4 left-4 flex space-x-2">
+          <div className="absolute bottom-3 left-3 flex space-x-2">
             {socials?.linkedin && (
               <a 
                 href={socials.linkedin} 
@@ -47,7 +47,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 rel="noopener noreferrer" 
                 className="bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm transition-colors"
               >
-                <Linkedin size={18} className="text-white" />
+                <Linkedin size={16} className="text-white" />
               </a>
             )}
             {socials?.twitter && (
@@ -57,7 +57,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 rel="noopener noreferrer" 
                 className="bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm transition-colors"
               >
-                <Twitter size={18} className="text-white" />
+                <Twitter size={16} className="text-white" />
               </a>
             )}
             {socials?.email && (
@@ -65,16 +65,16 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 href={`mailto:${socials.email}`} 
                 className="bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm transition-colors"
               >
-                <Mail size={18} className="text-white" />
+                <Mail size={16} className="text-white" />
               </a>
             )}
           </div>
         </div>
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-1">{name}</h3>
-        <p className="text-accent font-medium mb-3">{role}</p>
-        <p className="text-muted-foreground text-sm">{bio}</p>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold mb-1">{name}</h3>
+        <p className="text-accent font-medium text-sm mb-2">{role}</p>
+        <p className="text-muted-foreground text-xs">{bio}</p>
       </div>
     </div>
   );

@@ -22,13 +22,13 @@ const Team = () => {
       }
     },
     {
-      name: "Michael Müller",
-      role: "Structural Engineer",
-      bio: "A German-trained engineer with expertise in earthquake-resistant construction and innovative building materials.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      name: "David Okonkwo",
+      role: "Construction Manager",
+      bio: "With over a decade in managing large-scale construction projects, David ensures timely delivery while maintaining the highest quality standards.",
+      image: "https://images.unsplash.com/photo-1578496781379-7dcfb995253a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       socials: {
         linkedin: "#",
-        email: "michael@example.com"
+        email: "david@example.com"
       }
     },
     {
@@ -40,6 +40,47 @@ const Team = () => {
         linkedin: "#",
         twitter: "#",
         email: "esther@example.com"
+      }
+    },
+    {
+      name: "Marcus Johnson",
+      role: "Environmental Consultant",
+      bio: "Specialized in sustainable building practices, Marcus helps our projects minimize environmental impact while maximizing community benefits.",
+      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      socials: {
+        linkedin: "#",
+        twitter: "#",
+        email: "marcus@example.com"
+      }
+    },
+    {
+      name: "Aisha Kimani",
+      role: "Community Liaison",
+      bio: "As our bridge to local communities, Aisha ensures our projects respect cultural contexts and provide meaningful employment opportunities.",
+      image: "https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      socials: {
+        linkedin: "#",
+        email: "aisha@example.com"
+      }
+    },
+    {
+      name: "Michael Müller",
+      role: "Structural Engineer",
+      bio: "A German-trained engineer with expertise in earthquake-resistant construction and innovative building materials.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      socials: {
+        linkedin: "#",
+        email: "michael@example.com"
+      }
+    },
+    {
+      name: "Olivia Chen",
+      role: "Finance Director",
+      bio: "Olivia's expertise in international finance helps us manage complex budgets across multiple currencies and regulatory environments.",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      socials: {
+        linkedin: "#",
+        email: "olivia@example.com"
       }
     },
     {
@@ -66,7 +107,7 @@ const Team = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => (
             <TeamCard
               key={index}

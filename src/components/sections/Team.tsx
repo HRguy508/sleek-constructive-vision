@@ -25,7 +25,7 @@ const Team = () => {
       name: "David Okonkwo",
       role: "Construction Manager",
       bio: "With over a decade in managing large-scale construction projects, David ensures timely delivery while maintaining the highest quality standards.",
-      image: "https://images.unsplash.com/photo-1578496781379-7dcfb995253a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       socials: {
         linkedin: "#",
         email: "david@example.com"

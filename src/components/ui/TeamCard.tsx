@@ -25,14 +25,14 @@ const TeamCard: React.FC<TeamCardProps> = ({
 }) => {
   return (
     <div 
-      className="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300"
+      className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300"
       style={{ 
         animationDelay: `${delay}ms`,
         opacity: 0,
         animation: `fade-in 0.6s ease-out ${delay}ms forwards`
       }}
     >
-      <div className="aspect-[4/5] relative overflow-hidden rounded-t-xl">
+      <div className="aspect-[4/5] relative overflow-hidden rounded-2xl">
         <img 
           src={image} 
           alt={name} 

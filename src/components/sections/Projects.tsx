@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button } from '../ui/CustomButton';
 import ProjectCard from '../ui/ProjectCard';
@@ -11,6 +11,18 @@ const Projects = () => {
   });
 
   const [displayMode, setDisplayMode] = useState<'grid' | 'carousel'>('carousel');
+  
+  useEffect(() => {
+    if (window.PinUtils && typeof window.PinUtils.build === 'function') {
+      window.PinUtils.build();
+    } else {
+      const script = document.createElement('script');
+      script.src = '//assets.pinterest.com/js/pinit.js';
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   const projects = [
     {
@@ -140,17 +152,12 @@ const Projects = () => {
             {pinterestProjects.map((project, index) => (
               <div key={index} className={`w-full shadow-xl rounded-lg overflow-hidden ${inView ? 'animate-fade-in-delay-3' : 'opacity-0'}`} style={{ animationDelay: `${index * 200}ms` }}>
                 <div className="relative pinterest-embed-container">
-                  <iframe 
-                    src={`https://assets.pinterest.com/ext/embed.html?id=${project.id}`} 
-                    height={project.id === "15621929951505120" ? "900" : project.id === "70437489118755" ? "1167" : "600"} 
-                    width="100%" 
-                    frameBorder="0" 
-                    scrolling="no"
-                    title={`Project - ${project.title}`}
-                    className="shadow-lg rounded-lg pinterest-embed"
-                  ></iframe>
-                  <div className="absolute top-0 left-0 right-0 h-10 bg-white z-10"></div>
-                  <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10"></div>
+                  <a 
+                    data-pin-do="embedPin" 
+                    data-pin-width="medium" 
+                    href={`https://www.pinterest.com/pin/${project.id}/`}
+                    data-pin-terse="true"
+                  ></a>
                 </div>
                 <div className="bg-white p-4">
                   <h4 className="text-lg font-bold">{project.title}</h4>
@@ -167,17 +174,12 @@ const Projects = () => {
           </h3>
           <div className={`w-full flex justify-center ${inView ? 'animate-fade-in-delay-3' : 'opacity-0'}`}>
             <div className="relative pinterest-embed-container" style={{ maxWidth: '800px', width: '100%' }}>
-              <iframe 
-                src="https://assets.pinterest.com/ext/embed.html?id=3025924745349513" 
-                height="600" 
-                width="100%"
-                frameBorder="0" 
-                scrolling="no"
-                title="Pinterest Embed - Construction Project"
-                className="shadow-2xl rounded-lg pinterest-embed"
-              ></iframe>
-              <div className="absolute top-0 left-0 right-0 h-10 bg-white z-10"></div>
-              <div className="absolute bottom-0 left-0 right-0 h-10 bg-white z-10"></div>
+              <a 
+                data-pin-do="embedPin" 
+                data-pin-width="large" 
+                href="https://www.pinterest.com/pin/3025924745349513/"
+                data-pin-terse="true"
+              ></a>
             </div>
           </div>
         </div>
@@ -188,11 +190,10 @@ const Projects = () => {
           .pinterest-embed-container {
             position: relative;
             overflow: hidden;
-          }
-          .pinterest-embed {
-            margin-top: -40px;
-            margin-bottom: -40px;
-            pointer-events: none;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         `}
       </style>
